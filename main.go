@@ -153,6 +153,7 @@ func extract(path string, class string, out string, tempDir string) {
 
 }
 
+// https://stackoverflow.com/a/67179604/8789899
 func copyFile(in, out string) (int64, error) {
 	i, e := os.Open(in)
 	if e != nil {
@@ -167,7 +168,7 @@ func copyFile(in, out string) (int64, error) {
 	return o.ReadFrom(i)
 }
 
-// https://stackoverflow.com/questions/20357223/easy-way-to-unzip-file-with-golang#24792688
+// https://stackoverflow.com/a/24792688/24792688
 func Unzip(src, dest string) error {
 	r, err := zip.OpenReader(src)
 	if err != nil {
